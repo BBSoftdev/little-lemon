@@ -28,6 +28,11 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 40.sp,
     ),
+    headlineSmall = TextStyle(
+        fontFamily = Karla,
+        fontWeight = FontWeight.Medium,
+        fontSize = 25.sp,
+    ),
     titleLarge = TextStyle(
         fontFamily = Karla,
         fontWeight = FontWeight.ExtraBold,
