@@ -1,5 +1,6 @@
 package com.example.littlelemon.composables
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -9,23 +10,31 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.littlelemon.R
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 import com.example.littlelemon.ui.theme.Typography
 
 @Composable
-fun Onboarding(){
+fun Onboarding(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -73,97 +82,58 @@ fun Onboarding(){
                     style = Typography.titleLarge
                 )
             }
+
+            var firstName by remember { mutableStateOf("") }
             OutlinedTextField(
-                onValueChange = {},
-                value = "",
-                placeholder = { Text("Please enter your first name")},
+                onValueChange = {firstName = it},
+                value = firstName,
+                placeholder = { Text(stringResource(R.string.please_enter_your_first_name))},
                 label = { Text("First name") },
                 modifier = Modifier
                     .fillMaxWidth()
             )
+
+            var lastName by remember { mutableStateOf("") }
             OutlinedTextField(
-                onValueChange = {},
-                value = "",
-                placeholder = { Text("Please enter your last name")},
-                label = { Text("Last name") },
+                onValueChange = { lastName = it },
+                value = lastName,
+                placeholder = { Text(stringResource(R.string.please_enter_your_last_name))},
+                label = { Text(stringResource(R.string.last_name)) },
                 modifier = Modifier
                     .fillMaxWidth()
             )
+
+            var email by remember { mutableStateOf("") }
             OutlinedTextField(
-                onValueChange = {},
-                value = "",
-                placeholder = { Text("Please enter your email")},
-                label = { Text("Email") },
+                onValueChange = { email = it},
+                value = email,
+                placeholder = { Text(stringResource(R.string.please_enter_your_email))},
+                label = { Text(stringResource(R.string.email)) },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
                 modifier = Modifier
                     .fillMaxWidth()
             )
-            PrimaryButton(
-                text = "Register",
-                onClick = {},
-                modifier = Modifier
-                    .fillMaxWidth()
-            )
+
+            TODO("Validate input and Store in SharedPreferences")
+
+            Box(Modifier.fillMaxSize()) {
+                PrimaryButton(
+                    text = stringResource(R.string.register),
+                    onClick = {},
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.BottomCenter)
+                )
+            }
         }
-
     }
-
 }
-//    Scaffold(
-//        modifier = Modifier.fillMaxSize(),
-//        topBar = {
-//            CenterAlignedTopAppBar(
-//                title = {
-//                    Box(
-//                        modifier = Modifier
-//                            .fillMaxSize()
-//                            .padding(10.dp)
-//                    ) {
-//                        Image(
-//                            painter = painterResource(R.drawable.logo),
-//                            contentDescription = stringResource(R.string.header_logo),
-//                            modifier = Modifier
-//                                .fillMaxSize()
-//                        )
-//                    }
-//                }
-//            )
-//        })
-//        { paddingValues ->
-//            Column(
-//                modifier = Modifier.padding(paddingValues = paddingValues)
-//            ){
-//                Box(
-//                    contentAlignment = Alignment.Center,
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .fillMaxHeight(0.15f)
-//                        .background(MaterialTheme.colorScheme.primary)
-//                ){
-//                    Text(
-//                        text = stringResource(R.string.let_s_get_to_know_you),
-//                        style = Typography.headlineSmall,
-//                        textAlign = TextAlign.Center,
-//                        color = MaterialTheme.colorScheme.onPrimary,
-//                    )
-//                }
-//                Box(
-//                    contentAlignment = Alignment.CenterStart,
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .fillMaxHeight(0.15f)
-//                ){
-//                    Text(
-//                        text = stringResource(R.string.personal_information),
-//                        style = Typography.titleLarge
-//                    )
-//                }
-//            }
-//        }
 
 @Preview(showBackground = true)
 @Composable
 fun OnboardingPreview(){
+    val navController = rememberNavController()
     LittleLemonTheme {
-        Onboarding()
+        Onboarding(navController)
     }
 }

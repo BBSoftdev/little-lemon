@@ -3,4 +3,10 @@
     <string name="let_s_get_to_know_you">Let\'s get to know you</string>
     <string name="header_logo">header logo</string>
     <string name="personal_information">Personal information</string>
+    <string name="please_enter_your_email">Please enter your email</string>
+    <string name="please_enter_your_last_name">Please enter your last name</string>
+    <string name="please_enter_your_first_name">Please enter your first name</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="last_name">Last name</string>
 </resources>

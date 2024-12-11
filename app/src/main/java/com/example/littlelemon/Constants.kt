@@ -1,0 +1,7 @@
+package com.example.littlelemon
+
+object SharedPreferencesKeys {
+    const val FIRST_NAME = "first_name"
+    const val LAST_NAME = "last_name"
+    const val EMAIL = "email"
+}
