@@ -14,12 +14,12 @@ import com.example.littlelemon.Profile
 import com.example.littlelemon.SharedPreferencesKeys
 
 @Composable
-fun Navigation(modifier: Modifier){
+fun Navigation(){
     val navController = rememberNavController()
     val context = LocalContext.current
 
     val sharedPreferences  by lazy { context.getSharedPreferences("LittleLemon", MODE_PRIVATE) }
-    var userData = sharedPreferences.getString(SharedPreferencesKeys.FIRST_NAME, null)
+    val userData = sharedPreferences.getString(SharedPreferencesKeys.FIRST_NAME, null)
 
     val startDestination = if (userData == null) Onboarding.route else Home.route
 
