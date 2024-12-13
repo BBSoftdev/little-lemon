@@ -19,8 +19,10 @@ data class MenuNetwork(
         @SerialName("price")
         val price: Double,
         @SerialName("image")
-        val image: String
+        val image: String,
+        @SerialName("category")
+        val category: String
     ) {
-        fun toMenuItem() = MenuItem(id, title, description, price, image)
+        fun toMenuItem() = MenuItem(id, title, description, price, image, category)
     }
 }
