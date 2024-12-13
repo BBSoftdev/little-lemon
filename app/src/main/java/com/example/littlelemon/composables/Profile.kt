@@ -37,93 +37,84 @@ fun Profile(navController: NavController){
     val email = sharedPreferences.getString(EMAIL, stringResource(R.string.not_found))
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        verticalArrangement = Arrangement.SpaceBetween,
+        modifier = Modifier
+            .fillMaxSize()
     ){
         Header(navController)
         Column(
+            verticalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier
-                .fillMaxSize(1f)
+                .fillMaxWidth()
+                .fillMaxHeight(.6f)
                 .padding(30.dp)
-        ){
+        ) {
+            Text(
+                text = stringResource(R.string.personal_information),
+                style = Typography.titleLarge
+            )
             Column(
-                verticalArrangement = Arrangement.SpaceEvenly,
+                verticalArrangement = Arrangement.spacedBy(16.dp),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(.6f)
-            ) {
-                Box(
-                    contentAlignment = Alignment.CenterStart,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight(0.15f)
-                ){
-                    Text(
-                        text = stringResource(R.string.personal_information),
-                        style = Typography.titleLarge
-                    )
-                }
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ){
-                    Text(
-                        text = "${stringResource(R.string.first_name)}:",
-                        style = Typography.labelMedium
-                    )
-                    Text(
-                        text = firstName!!,
-                        style = Typography.bodyLarge
-                    )
-                }
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ){
-                    Text(
-                        text = "${stringResource(R.string.last_name)}:",
-                        style = Typography.labelMedium
-                    )
-                    Text(
-                        text = lastName!!,
-                        style = Typography.bodyLarge
-                    )
-                }
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ){
-                    Text(
-                        text = "${stringResource(R.string.email)}:",
-                        style = Typography.labelMedium
-                    )
-                    Text(
-                        text = email!!,
-                        style = Typography.bodyLarge
-                    )
-                }
+            ){
+                Text(
+                    text = "${stringResource(R.string.first_name)}:",
+                    style = Typography.labelMedium
+                )
+                Text(
+                    text = firstName!!,
+                    style = Typography.bodyLarge
+                )
             }
-            Box(
-                modifier = Modifier.fillMaxSize()
-            )
-            {
-                PrimaryButton(
-                    text = stringResource(R.string.log_out),
-                    onClick = {
-                        sharedPreferences.edit().clear().apply()
-                        navController.navigate(Onboarding.route)
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .align(Alignment.BottomCenter)
+            Column(
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
+                Text(
+                    text = "${stringResource(R.string.last_name)}:",
+                    style = Typography.labelMedium
+                )
+                Text(
+                    text = lastName!!,
+                    style = Typography.bodyLarge
+                )
+            }
+            Column(
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
+                Text(
+                    text = "${stringResource(R.string.email)}:",
+                    style = Typography.labelMedium
+                )
+                Text(
+                    text = email!!,
+                    style = Typography.bodyLarge
                 )
             }
         }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(30.dp)
+        ){
+            PrimaryButton(
+                text = stringResource(R.string.log_out),
+                onClick = {
+                    sharedPreferences.edit().clear().apply()
+                    navController.navigate(Onboarding.route)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.BottomCenter)
+            )
+        }
     }
-
 }
+
 
 @Preview(showBackground = true)
 @Composable
