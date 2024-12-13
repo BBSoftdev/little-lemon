@@ -15,6 +15,9 @@
     <string name="profile_image">Profile image</string>
     <string name="go_back_icon">Go Back Icon</string>
     <string name="fetch_menu_items_url">https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json</string>
-    <string name="little_lemon">Little Lemon</string>
+    <string name="restaurant_name">Little Lemon</string>
     <string name="click_here">Click here</string>
+    <string name="restaurant_location">Chicago</string>
+    <string name="restaurant_description">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</string>
+    <string name="banner_image">Banner image</string>
 </resources>
