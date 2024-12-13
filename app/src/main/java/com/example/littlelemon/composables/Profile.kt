@@ -1,11 +1,9 @@
 package com.example.littlelemon.composables
 
 import android.content.Context.MODE_PRIVATE
-import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.littlelemon.Home
 import com.example.littlelemon.Onboarding
 import com.example.littlelemon.R
 import com.example.littlelemon.SharedPreferencesKeys.EMAIL
@@ -52,7 +49,7 @@ fun Profile(navController: NavController){
                 verticalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(.5f)
+                    .fillMaxHeight(.6f)
             ) {
                 Box(
                     contentAlignment = Alignment.CenterStart,
@@ -65,42 +62,42 @@ fun Profile(navController: NavController){
                         style = Typography.titleLarge
                     )
                 }
-                Row(
-                    horizontalArrangement = Arrangement.SpaceBetween,
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                     modifier = Modifier
                         .fillMaxWidth()
                 ){
                     Text(
                         text = "${stringResource(R.string.first_name)}:",
-                        style = Typography.bodyLarge
+                        style = Typography.labelMedium
                     )
                     Text(
                         text = firstName!!,
                         style = Typography.bodyLarge
                     )
                 }
-                Row(
-                    horizontalArrangement = Arrangement.SpaceBetween,
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                     modifier = Modifier
                         .fillMaxWidth()
                 ){
                     Text(
                         text = "${stringResource(R.string.last_name)}:",
-                        style = Typography.bodyLarge
+                        style = Typography.labelMedium
                     )
                     Text(
                         text = lastName!!,
                         style = Typography.bodyLarge
                     )
                 }
-                Row(
-                    horizontalArrangement = Arrangement.SpaceBetween,
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                     modifier = Modifier
                         .fillMaxWidth()
                 ){
                     Text(
                         text = "${stringResource(R.string.email)}:",
-                        style = Typography.bodyLarge
+                        style = Typography.labelMedium
                     )
                     Text(
                         text = email!!,
