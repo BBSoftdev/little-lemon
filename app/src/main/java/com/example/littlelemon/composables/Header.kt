@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -17,7 +18,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -26,6 +26,7 @@ import com.example.littlelemon.Onboarding
 import com.example.littlelemon.Profile
 import com.example.littlelemon.R
 import com.example.littlelemon.ui.theme.LittleLemonTheme
+import com.example.littlelemon.ui.theme.spacing
 
 @Composable
 fun Header(navController: NavController){
@@ -54,7 +55,7 @@ fun Header(navController: NavController){
                 modifier = Modifier
                     .fillMaxHeight(.5f)
                     .align(Alignment.CenterEnd)
-                    .padding(horizontal = 24.dp)
+                    .padding(horizontal = MaterialTheme.spacing.large)
                     .clickable { navController.navigate(Profile.route) }
             )
 
@@ -65,7 +66,7 @@ fun Header(navController: NavController){
                 modifier = Modifier
                     .fillMaxHeight(.5f)
                     .align(Alignment.CenterStart)
-                    .padding(horizontal = 24.dp)
+                    .padding(horizontal = MaterialTheme.spacing.large)
                     .clickable { navController.navigateUp() }
             )
     }

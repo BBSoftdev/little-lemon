@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.littlelemon.Onboarding
@@ -26,6 +26,7 @@ import com.example.littlelemon.SharedPreferencesKeys.LAST_NAME
 import com.example.littlelemon.SharedPreferencesKeys.LITTLE_LEMON
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 import com.example.littlelemon.ui.theme.Typography
+import com.example.littlelemon.ui.theme.spacing
 
 @Composable
 fun Profile(navController: NavController){
@@ -47,14 +48,14 @@ fun Profile(navController: NavController){
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(.6f)
-                .padding(30.dp)
+                .padding(MaterialTheme.spacing.large)
         ) {
             Text(
                 text = stringResource(R.string.personal_information),
                 style = Typography.titleLarge
             )
             Column(
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.medium),
                 modifier = Modifier
                     .fillMaxWidth()
             ){
@@ -68,7 +69,7 @@ fun Profile(navController: NavController){
                 )
             }
             Column(
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.medium),
                 modifier = Modifier
                     .fillMaxWidth()
             ){
@@ -82,7 +83,7 @@ fun Profile(navController: NavController){
                 )
             }
             Column(
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.medium),
                 modifier = Modifier
                     .fillMaxWidth()
             ){
@@ -99,7 +100,7 @@ fun Profile(navController: NavController){
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(30.dp)
+                .padding(MaterialTheme.spacing.large)
         ){
             PrimaryButton(
                 text = stringResource(R.string.log_out),

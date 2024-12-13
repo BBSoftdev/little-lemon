@@ -27,7 +27,6 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.littlelemon.Home
@@ -38,6 +37,7 @@ import com.example.littlelemon.SharedPreferencesKeys.LAST_NAME
 import com.example.littlelemon.SharedPreferencesKeys.LITTLE_LEMON
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 import com.example.littlelemon.ui.theme.Typography
+import com.example.littlelemon.ui.theme.spacing
 
 @Composable
 fun Onboarding(navController: NavController){
@@ -61,9 +61,9 @@ fun Onboarding(navController: NavController){
             )
         }
         Column(
-            verticalArrangement = Arrangement.spacedBy(30.dp),
+            verticalArrangement = Arrangement.spacedBy(MaterialTheme.spacing.large),
             modifier = Modifier
-                .padding(30.dp)
+                .padding(MaterialTheme.spacing.large)
         ){
             Box(
                 contentAlignment = Alignment.CenterStart,
