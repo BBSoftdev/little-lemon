@@ -47,19 +47,7 @@ fun Onboarding(navController: NavController){
         modifier = Modifier
             .fillMaxSize()
     ){
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(.12f)
-        ) {
-            Image(
-                painter = painterResource(R.drawable.logo),
-                contentDescription = stringResource(R.string.header_logo),
-                modifier = Modifier
-                    .fillMaxSize(.5f)
-            )
-        }
+        Header(navController)
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -98,7 +86,7 @@ fun Onboarding(navController: NavController){
                 },
                 value = firstName,
                 placeholder = { Text(stringResource(R.string.please_enter_your_first_name))},
-                label = { Text("First name") },
+                label = { Text(stringResource(R.string.first_name)) },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                 modifier = Modifier
                     .fillMaxWidth()
