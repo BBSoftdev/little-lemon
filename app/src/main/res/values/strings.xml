@@ -13,4 +13,5 @@
     <string name="not_found">Not found</string>
     <string name="first_name">First name</string>
     <string name="profile_image">Profile image</string>
+    <string name="go_back_icon">Go Back Icon</string>
 </resources>

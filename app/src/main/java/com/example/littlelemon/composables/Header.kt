@@ -1,6 +1,5 @@
 package com.example.littlelemon.composables
 
-import android.R.attr.left
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -8,6 +7,9 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -20,6 +22,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.littlelemon.Home
+import com.example.littlelemon.Onboarding
 import com.example.littlelemon.Profile
 import com.example.littlelemon.R
 import com.example.littlelemon.ui.theme.LittleLemonTheme
@@ -27,8 +30,10 @@ import com.example.littlelemon.ui.theme.LittleLemonTheme
 @Composable
 fun Header(navController: NavController){
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentDestination = navBackStackEntry?.destination
-    var onHome = currentDestination?.route == Home.route
+    val currentDestinationRoute = navBackStackEntry?.destination?.route
+
+    var onHome = currentDestinationRoute == Home.route
+    var onStart = onHome || currentDestinationRoute == Onboarding.route
 
     Box(
         contentAlignment = Alignment.Center,
@@ -51,6 +56,17 @@ fun Header(navController: NavController){
                     .align(Alignment.CenterEnd)
                     .padding(horizontal = 24.dp)
                     .clickable { navController.navigate(Profile.route) }
+            )
+
+        if(!onStart)
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = stringResource(R.string.go_back_icon),
+                modifier = Modifier
+                    .fillMaxHeight(.5f)
+                    .align(Alignment.CenterStart)
+                    .padding(horizontal = 24.dp)
+                    .clickable { navController.popBackStack() }
             )
     }
 }
