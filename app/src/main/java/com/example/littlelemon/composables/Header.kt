@@ -66,7 +66,7 @@ fun Header(navController: NavController){
                     .fillMaxHeight(.5f)
                     .align(Alignment.CenterStart)
                     .padding(horizontal = 24.dp)
-                    .clickable { navController.popBackStack() }
+                    .clickable { navController.navigateUp() }
             )
     }
 }
