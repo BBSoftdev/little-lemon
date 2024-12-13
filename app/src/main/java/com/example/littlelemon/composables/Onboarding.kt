@@ -2,7 +2,6 @@ package com.example.littlelemon.composables
 
 import android.content.Context.MODE_PRIVATE
 import android.widget.Toast
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,7 +22,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -63,9 +61,9 @@ fun Onboarding(navController: NavController){
             )
         }
         Column(
-            verticalArrangement = Arrangement.spacedBy(24.dp),
+            verticalArrangement = Arrangement.spacedBy(30.dp),
             modifier = Modifier
-                .padding(24.dp)
+                .padding(30.dp)
         ){
             Box(
                 contentAlignment = Alignment.CenterStart,
@@ -116,10 +114,10 @@ fun Onboarding(navController: NavController){
                     .fillMaxWidth()
             )
 
-            val context = LocalContext.current
-            val sharedPreferences by lazy { context.getSharedPreferences(LITTLE_LEMON, MODE_PRIVATE) }
-
             Box(Modifier.fillMaxSize()) {
+                val context = LocalContext.current
+                val sharedPreferences by lazy { context.getSharedPreferences(LITTLE_LEMON, MODE_PRIVATE) }
+
                 PrimaryButton(
                     text = stringResource(R.string.register),
                     onClick = {
