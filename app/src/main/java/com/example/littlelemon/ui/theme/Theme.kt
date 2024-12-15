@@ -21,6 +21,7 @@ private val LightColorScheme = lightColorScheme(
     onSecondary = Black,
     background = White,
     surface = LightGrey,
+    surfaceVariant = Grey,
     onBackground = Black,
     onSurface = LightGreen,
     error = Red,

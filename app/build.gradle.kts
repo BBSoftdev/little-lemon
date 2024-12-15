@@ -59,10 +59,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    ksp(libs.androidx.lifecycle.common)
     implementation (libs.ktor.client.android)
     implementation (libs.ktor.client.content.negotiation)
     implementation (libs.ktor.serialization.kotlinx.json)
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.runtime.livedata)
-    implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
+    implementation (libs.compose)
 }

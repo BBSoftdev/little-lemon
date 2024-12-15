@@ -7,8 +7,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import com.example.littlelemon.composables.Navigation
@@ -41,7 +39,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LittleLemonTheme {
-
                 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
                 Scaffold(modifier = Modifier.fillMaxSize()) {  innerPadding ->
                     Navigation()
