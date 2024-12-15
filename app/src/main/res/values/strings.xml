@@ -20,4 +20,5 @@
     <string name="restaurant_location">Chicago</string>
     <string name="restaurant_description">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</string>
     <string name="banner_image">Banner image</string>
+    <string name="order_for_delivery">ORDER FOR DELIVERY!</string>
 </resources>

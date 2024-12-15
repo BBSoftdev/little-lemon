@@ -6,3 +6,10 @@ object SharedPreferencesKeys {
     const val EMAIL = "email"
     const val LITTLE_LEMON = "LittleLemon"
 }
+
+enum class MenuCategories {
+    Starters,
+    Mains,
+    Desserts,
+    Drinks
+}
