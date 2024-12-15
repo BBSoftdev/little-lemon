@@ -86,6 +86,7 @@ fun Onboarding(navController: NavController){
                 placeholder = { Text(stringResource(R.string.please_enter_your_first_name))},
                 label = { Text(stringResource(R.string.first_name)) },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                singleLine = true,
                 modifier = Modifier
                     .fillMaxWidth()
             )
@@ -97,6 +98,7 @@ fun Onboarding(navController: NavController){
                 placeholder = { Text(stringResource(R.string.please_enter_your_last_name))},
                 label = { Text(stringResource(R.string.last_name)) },
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                singleLine = true,
                 modifier = Modifier
                     .fillMaxWidth()
             )
@@ -110,6 +112,7 @@ fun Onboarding(navController: NavController){
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Email, imeAction = ImeAction.Done
                 ),
+                singleLine = true,
                 modifier = Modifier
                     .fillMaxWidth()
             )
