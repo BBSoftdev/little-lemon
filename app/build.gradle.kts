@@ -64,4 +64,5 @@ dependencies {
     implementation (libs.ktor.serialization.kotlinx.json)
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.runtime.livedata)
+    implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
 }
