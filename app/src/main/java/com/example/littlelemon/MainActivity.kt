@@ -41,7 +41,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LittleLemonTheme {
-                val databaseMenuItems by menuRepository.getAllMenuItems().observeAsState(emptyList())
 
                 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
                 Scaffold(modifier = Modifier.fillMaxSize()) {  innerPadding ->

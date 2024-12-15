@@ -5,12 +5,7 @@ import androidx.room.Room
 
 class MenuRepository(context: Context) {
 
-    private val database =
-        Room.databaseBuilder(
-            context.applicationContext,
-            AppDatabase::class.java,
-            "database"
-        ).build()
+    private val database = AppDatabase.getInstance(context)
 
     fun getAllMenuItems() = database.menuDao().getAllMenuItems()
 
