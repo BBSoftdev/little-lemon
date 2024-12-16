@@ -22,4 +22,6 @@
     <string name="banner_image">Banner image</string>
     <string name="order_for_delivery">ORDER FOR DELIVERY!</string>
     <string name="search">Search</string>
+    <string name="registration_unsuccessful">Registration unsuccessful. Please enter all data.</string>
+    <string name="registration_successful">Registration successful!</string>
 </resources>

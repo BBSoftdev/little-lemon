@@ -1,13 +1,9 @@
 package com.example.littlelemon
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import com.example.littlelemon.composables.Navigation
 import com.example.littlelemon.database.MenuNetwork
@@ -39,10 +35,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LittleLemonTheme {
-                @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-                Scaffold(modifier = Modifier.fillMaxSize()) {  innerPadding ->
-                    Navigation()
-                }
+                Navigation()
             }
         }
 

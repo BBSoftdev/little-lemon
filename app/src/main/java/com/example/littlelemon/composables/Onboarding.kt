@@ -126,9 +126,10 @@ fun Onboarding(navController: NavController){
                     onClick = {
                         var message: String
                         if (firstName.isBlank() || lastName.isBlank() || email.isBlank())
-                            message = "Registration unsuccessful. Please enter all data."
+                            message =
+                                context.getString(R.string.registration_unsuccessful)
                         else {
-                            message = "Registration successful!"
+                            message = context.getString(R.string.registration_successful)
                             sharedPreferences.edit()
                                 .putString(FIRST_NAME, firstName)
                                 .putString(LAST_NAME, lastName)

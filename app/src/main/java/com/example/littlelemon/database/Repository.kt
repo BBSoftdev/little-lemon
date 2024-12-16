@@ -1,7 +1,6 @@
 package com.example.littlelemon.database
 
 import android.content.Context
-import androidx.room.Room
 
 class MenuRepository(context: Context) {
 
